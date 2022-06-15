@@ -38,4 +38,4 @@ jobs:
       with:
         name: "Artifact-${{steps.time.outputs.time}}"
         path: build/libs
-        retention-days: 5
+        retention-days: 3
