@@ -5,7 +5,7 @@ name: Java CI with Gradle
 
 on:
   push:
-    branches: [ main ]
+    branches: [ jar_workflow_aws ]
   pull_request:
     branches: [ main ]
 
