@@ -32,7 +32,7 @@ jobs:
       with:
         name: "Artifact-${{steps.time.outputs.time}}"
         path: build/libs
-        retention-days: 3
+        retention-days: 5
      - name: Beanstalk Deploy for JAR
        uses: DylanBDev/beanstalk-deploy@initial
        with:
