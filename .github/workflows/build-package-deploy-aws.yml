@@ -11,9 +11,7 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
     - name: Set up JDK 11
@@ -26,20 +24,17 @@ jobs:
       run: chmod +x gradlew
     - name: Build with Gradle
       run: ./gradlew build
-
     - name: Create Timestamp for Version Info
       id: time
       uses: nanzm/get-time-action@v1.1
       with:
         format: 'YYYY-MM-DD-HH-mm-ss'
-
     - name: Make Artifact Available
       uses: actions/upload-artifact@v2
       with:
         name: "Artifact-${{steps.time.outputs.time}}"
         path: build/libs
         retention-days: 3
-
      - name: Beanstalk Deploy for JAR
        uses: DylanBDev/beanstalk-deploy@initial
        with:
